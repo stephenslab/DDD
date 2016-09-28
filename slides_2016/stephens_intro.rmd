@@ -1,0 +1,52 @@
+---
+title: "DDD Site visit"
+date: "September 28th, 2016"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Overview: lab projects
+
+- Dynamic Statistical Comparisons
+
+- The Multiple Testing Party
+
+
+## Dynamic Statistical Comparisons
+
+- Pilot project: an R package 'dscr', implementing methods in R
+    - useful, but we wanted something more flexible
+
+- This year, DSC2: a more flexible workflow tool for running pipelines
+    - command line based 
+    - still aimed at making R integration particularly easy
+    - update from Gao Wang later
+    
+## Multiple testing party (credit: J Pickrell)
+
+- Multiple testing is usually portrayed as a ``burden" by statisticians (and others)
+
+- Our view: multiple testing is really an opportunity!
+
+- Lab is developing tools for exploiting this opportunity
+    - ... and inviting people to the multiple testing party.
+
+## Multiple testing party: completed work
+
+- Univariate, "adaptive shrinkage" (Stephens, 2016; Xing and Stephens, 2016; Lu and Stephens, 2016). 
+
+    - software packages: `ashr`, `smashr`, `vashr`
+
+- Multivariate (Urbut, Wang, et al, in preparation)
+
+    - software package: `mashr`
+    
+## Multiple testing party: in progress
+
+- RNA-sequencing application (update from Lu/Gerard)
+
+- From correlations to causation... (just beginning; update from Marcus)
+
