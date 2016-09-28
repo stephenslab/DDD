@@ -1,0 +1,91 @@
+%\documentclass[handout]{beamer}
+\documentclass[evncountsect]{beamer}
+\usepackage{amsmath,algorithm,algorithmic,graphicx,amsfonts,amsthm,color,pgf,tikz,wrapfig,amsfonts,multicol,wasysym,animate}
+\usepackage[absolute,overlay]{textpos}
+\usetikzlibrary{arrows}
+\beamertemplatenavigationsymbolsempty
+\setbeamercovered{transparent = 0}
+\useoutertheme[subsection=false]{miniframes}
+\bibliographystyle{apalike}
+\setlength{\fboxrule}{1pt}
+
+\title{RNA-seq and Adaptive Shrinkage}
+\author{David Gerard and Mengyin Lu}
+\institute[UChicago]{
+  Department of Human Genetics\\
+  University of Chicago\\
+  Boss: Matthew Stephens
+}
+\date[September 2016]{September, 2016}
+
+% available at https://github.com/matze/mtheme
+\usetheme{metropolis}
+
+\begin{document}
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{RNA-seq}
+  What is RNA-seq?
+  \begin{enumerate}
+  \item Each cell in our body contains a population of RNA fragments. \medskip
+  \item These RNA fragments are the output (``expression'') of genes.\medskip
+  \item RNA-seq uses next-gen sequencing to measure the relative
+    expression of genes within a sample.\medskip
+  \item Relative differences in the expression levels of these RNA
+    fragments between groups tell us interesting things:
+    \begin{enumerate}
+    \item Which genes are influenced by a drug?\smallskip
+    \item How do cancer patients differ from non-cancer patients?\smallskip
+    \item Which genes are important in liver tissue versus muscle tissue?
+    \end{enumerate}
+  \end{enumerate}
+
+  % Improvements over older technology:
+  % \begin{enumerate}
+  % \item Do not need prior knowledge of a gene to measure its expression level.
+  % \item Can compare genes within a sample.
+  % \item More accurate measurements of low/high expressed genes.
+  % \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Many Problems}
+  \begin{enumerate}
+  \item Count Data: A new type of data that requires new normalization
+    procedures/pipelines.\medskip
+  \item Small Sample Sizes: Low power. Hard to detect differences between groups.\medskip
+  \item Unobserved Variables: Can ruin analyses. Can make results uninterpretable.
+    \begin{enumerate}
+    \item Which lab/technician processed a sample?\smallskip
+    \item The ancestry of the sample.\smallskip
+    \item Subject attributes such as age or sex.
+    \end{enumerate}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Our Work}
+  \begin{enumerate}
+  \item Count Data: Develop optimal pipelines for analysis.
+    \begin{enumerate}
+    \item Which published methods work in practice?\smallskip
+    \item Develop benchmarks to compare pipelines.\medskip
+    \end{enumerate}
+  \item Small Sample Sizes:
+    \begin{enumerate}
+    \item Harness the power of ASH.\smallskip
+    \item Borrow strength between variables.
+    \end{enumerate}\medskip
+  \item Unobserved Variables:
+    \begin{enumerate}
+    \item Integrate ``factor-augmented regression'' models with the
+      shrinkage ideas from ASH. \smallskip
+    \item Modify known approaches to optimize the performance of ASH.
+    \end{enumerate}
+  \end{enumerate}
+\end{frame}
+
+\end{document}
